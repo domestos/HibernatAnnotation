@@ -61,7 +61,7 @@ public class Main {
 
         //GET ID
         //-----------------------------------------------------------
-        Company returnGetId =  companyDaoImpl.getIdDataBase(4);
+        Company returnGetId =  companyDaoImpl.getIdDataBase(9);
         System.out.println("Get id company: " );
         System.out.println(returnGetId.getId()+" "+
                 returnGetId.getMobCumber()+" "+
