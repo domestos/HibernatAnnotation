@@ -17,6 +17,9 @@ public class Cartridge extends DataBase {
     @JoinColumn(name= "id_company")
     private Company company;
 
+    public Company getCompany() {
+        return company;
+    }
 
     @Column (name = "model_cartridge")
     private String modelCartridge;

@@ -11,19 +11,41 @@ public class Main {
 
     public static void main(String[] args) throws SQLException {
 	// write your code here
-
+        
+        
+        
         CompanyDaoImpl companyDaoImpl= new CompanyDaoImpl();
         CartrigeDaoImpl cartrigeDaoImpl = new CartrigeDaoImpl();
 
+
+        List<Cartridge> cartridgeList = null;
         Company company = new Company();
+
+        Cartridge cartridge = new Cartridge();
+        cartridge.setCompany(company);
+        cartridge.setModelCartridge("Samsun scx-4600");
+        cartridge.setNumberLink("1659");
+        cartridge.setRqLink("RQLink");
+
+        Cartridge cartridge2 = new Cartridge();
+        cartridge2.setCompany(company);
+        cartridge2.setModelCartridge("Samsun scx-4600");
+        cartridge2.setNumberLink("1659");
+        cartridge2.setRqLink("RQLink");
+
+
+
+
+        company.setCartridges(cartridgeList);
         company.setNameCompany("DZK Company");
         company.setMobCumber("0676724468");
 
         //ADD
         //-----------------------------------------------------------
-        //companyDaoImpl.addDataBase(company);
+        companyDaoImpl.addDataBase(company);
         //-----------------------------------------------------------
-
+        cartrigeDaoImpl.addDataBase(cartridge);
+        cartrigeDaoImpl.addDataBase(cartridge2);
         //GET ALL
         //-----------------------------------------------------------
 
@@ -36,10 +58,10 @@ public class Main {
         }
         //-------------------------------------------------------------
 
-/*
+
         //GET ID
         //-----------------------------------------------------------
-        Company returnGetId =  companyDaoImpl.getIdDataBase(1);
+        Company returnGetId =  companyDaoImpl.getIdDataBase(4);
         System.out.println("Get id company: " );
         System.out.println(returnGetId.getId()+" "+
                 returnGetId.getMobCumber()+" "+
@@ -51,8 +73,7 @@ public class Main {
         //-----------------------------------------------------------
         companyDaoImpl.deleteDataBase(returnGetId);
         //-----------------------------------------------------------
-        */
-        System.out.println( companyDaoImpl.getNameDataBase("DZK Company"));
+
 
     }
 }

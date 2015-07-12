@@ -31,6 +31,15 @@ public class Company extends DataBase {
 
     //Getter and Setter
 
+
+    public List<Cartridge> getCartridges() {
+        return Cartridges;
+    }
+
+    public void setCartridges(List<Cartridge> cartridges) {
+        Cartridges = cartridges;
+    }
+
     public int getId() {
         return id;
     }
